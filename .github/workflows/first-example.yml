@@ -12,9 +12,6 @@ jobs:
          - name: Install Cowsay
            run: sudo apt-get install cowsay -y
 
-         - name: Execute the cowsay command
-           run: cowsay -f dargon "I am Dargon" >> dargon.txt
-
          - name: Execute the Script
            run:
              chmod +x script.sh
@@ -33,7 +30,7 @@ jobs:
 
     Deploy_Job:
         runs-on: ubuntu-latest
-        name: Test_job
+        needs: Test_job
         steps:
             - name: Read file
               run: cat dragon.txt
