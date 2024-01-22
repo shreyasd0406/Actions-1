@@ -1,0 +1,14 @@
+name: My first workflow
+
+on: push
+
+jobs:
+    first_job:
+       runs-on: ubuntu-latest
+       steps: 
+         - name: welcome to ubuntu
+           run: echo "welcome to ubuntu"
+
+    
+
+   
