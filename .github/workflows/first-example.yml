@@ -3,20 +3,41 @@ name: My first workflow
 on: push
 
 jobs:
-    first_job:
+    build_job:
        runs-on: ubuntu-latest
        steps: 
          - name: Checkout Repo
            uses: actions/checkout@v4
 
+         - name: Install Cowsay
+           run: sudo apt-get install cowsay -y
+
+         - name: Execute the cowsay command
+           run: cowsay -f dargon "I am Dargon" >> dargon.txt
+
          - name: Execute the Script
            run:
              chmod +x script.sh
-             
+
              ./script.sh
 
          - name: welcome to ubuntu
            run: echo "welcome to ubuntu"
+
+    Test_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Read the files
+              run: cat dargon.txt | grep -i "dargon"
+
+    Deploy_Job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Read file
+              run: cat dragon.txt
+
+            - name: Deployment status
+              run: echo "Deployment completed"
 
     
 
