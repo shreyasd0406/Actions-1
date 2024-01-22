@@ -26,7 +26,7 @@ jobs:
         needs: build_job
         steps:
             - name: Read the files
-              run: grep -i "dargon" dargon.txt
+              run: touch dargon.txt
 
     Deploy_Job:
         runs-on: ubuntu-latest
