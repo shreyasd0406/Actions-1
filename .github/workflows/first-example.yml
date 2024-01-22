@@ -13,7 +13,7 @@ jobs:
            run: sudo apt-get install cowsay -y
 
          - name: Execute cowsay cmd
-           run: cowsay -f dargon "Run for cover, I am DRAGON....RAWR" >> dragon.txt
+           run: cowsay -f dragon "Run for cover, I am DRAGON....RAWR" >> dragon.txt
 
          - name: Execute the Script
            run:
@@ -29,7 +29,7 @@ jobs:
         needs: build_job
         steps:
             - name: Read the files
-              run: grep -i "dragon" dargon.txt
+              run: grep -i "dragon" dragon.txt
 
     Deploy_Job:
         runs-on: ubuntu-latest
